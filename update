@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+changes="$(git diff --exit-code && git diff --cached --exit-code)"
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+git fetch origin "$branch"
+
+if [ "$changes" != "" ]
+	then git stash
+fi
+
+git rebase FETCH_HEAD
+
+if [ "$changes" != "" ]
+	then git stash apply
+fi

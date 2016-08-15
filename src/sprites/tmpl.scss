@@ -1,0 +1,9 @@
+{{#shapes}}
+	.{{#selector.shape}}{{expression}}{{/selector.shape}} {
+		@include rem((width: {{width.outer}}px));
+
+		&:before {
+			padding-top: calc(({{height.outer}}% / {{width.outer}}%) * 100%);
+		}
+	}
+{{/shapes}}
