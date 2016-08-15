@@ -1,59 +1,52 @@
-# Desime
+# address-book
+Simple Address Book
+
 
 ## Frontend setup
 
-1. Install Node if not installed
-2. Ensure `./node_modules` is in your PATH
-3. Run `npm install`
-4. Run `gulp`
+1. Installeer Node als deze nog niet is geinstalleerd
+2. Run `npm install`
+3. Run `gulp`
 
-## Gulp tasks
+### Gulp taken
 
-**List available tasks:** `gulp help`
+**Lijst van beschikbare taken:** `gulp help`
 
-## LiveReload (optional)
+### LiveReload (optioneel)
 
-LiveReload is enabled while `gulp watch` is active. To use, install the [the LiveReload extension for your browser](http://livereload.com/extensions/) and activate it for the relevant page(s) (in Chrome, click the extension icon when viewing a page).
+LiveReload is aan wanneer `gulp watch` actief is. Om het te gebruiken moet je [de LiveReload extensie voor je browser](http://livereload.com/extensions/) installeren en activeren voor de relevante pagina(s) (In Chrome moet je eerst op de extensie icon drukken als je een pagina bekijkt.)
 
-## Linting setup (optional)
+### Linting (optioneel)
 
-Run `bundle install` (unless [scss_lint](https://github.com/brigade/scss-lint) gem is already available).
+Doe `bundle install` (maar niet als de [scss_lint](https://github.com/brigade/scss-lint) gem al geïnstalleerd is).
 
-## Updating live/staging
+### Updating live/staging
 
-Run `./update && gulp dist` - this does the following:
+Doe `./update && gulp dist` - dit doet het volgende:
 1. Stashes changes (if stashable changes exist)
 2. Rebases origin/current branch onto current branch
 3. Applies stashed changes (if changes were stashed)
 4. Runs default gulp task
 5. Versions and minifies CSS/JS
 
-## Generating SVG sprites
-For each sprite, create the following directory pattern (replacing _{spritename}_ with a URL-friendly ID, e.g. _ui_ or _logos_):
+### Genereren van SVG sprites
+Voor elke sprite; maak de volgende mappen structuur (vervang _{spritename}_ met een URL-vriendelijke ID, bijvoorbeeld: _ui_ of _logos_):
 
 _./src/sprites/{spritename}/svg/_
 
-Inside this nested _svg_ directory, add an _.svg_ file for each icon (with URL-friendly file names). These should be pre-scaled to the size at which they will be used (not vital as they're scalable, but this will help in IE8 when they're replaced with raster graphics)
+In de nested _svg_ map kun je een .svg bestand toevoegen voor elke icon (met URL-vriendelijke bestands namen). Deze moeten voorgeschaald zijn op de grote waarin je ze gaat gebruiken. (Niet super belangrijk omdat ze schaalbaar zijn, maar dit helpt in IE8 omdat ze dan worden vervangen door raster graphics)
 
-Add the following `@import` rule to your Sass: `@import "{spritename}/sprite.scss";` (Replacing _{spritename}_ as above)
+Voeg de volgende `@import` regel toe in je Sass: `@import "{spritename}/_sprite.scss";` (Vervang _{spritenaam}_ zoals hierboven)
 
-Run `gulp sprites && gulp sass`. This generates the SVG sprite + creates a reference HTML file: _./src/sprites/{spritename}/svg/sprite.html_ (may be useful as an overview of the available icons)
+Doe `gulp sprites && gulp sass`. Dit genereert de SVG sprites + maakt een html reference bestand: _./src/sprites/{spritename}/svg/sprite.html_ (kan handig zijn als je een overview van icons wilt zien)
 
-If you add additional _.svg_ files in future, re-run `gulp sprites && gulp sass`
+Als je op een later moment _.svg_ files toevoegt, doe dan nogmaals `gulp sprites && gulp sass`
 
-## Using SVG sprites
-Use markup similar to:
+## Backend setup
 
-```html
-<i class="icon icon--{spritename}__{iconname}">
-	<svg><use xlink:href="/media/images/sprites/{spritename}.svg#{iconname}" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
-</i>
-```
+### Config
+Doe eerst een `composer install` om alle PHP dependencies te installeren, vervolgens
 
-e.g. If a sprite exists named _ui_ which contains an icon file named  _logo.svg_, the markup to use the logo portion of the sprite would be:
+hernoem je `config-sample.php` naar `config.php` en vul de database gegevens in. 
 
-```html
-<i class="icon icon--ui__logo">
-	<svg><use xlink:href="/media/images/sprites/ui.svg#logo" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
-</i>
-```
+Upload `db.sql` naar je database server en je bent good-to-go!
