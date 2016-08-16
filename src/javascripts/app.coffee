@@ -27,3 +27,14 @@ app.preventFocusStick = ->
 app.attachFastClick = -> FastClick.attach document.body
 
 app.setup()
+
+(($) ->
+  
+) jQuery
+
+$(".menu-icon").on "click", (event) ->
+  event.preventDefault()
+  if $("body").hasClass( "menu-open" )
+    $("body").removeClass( "menu-open")
+  else
+    $("body").addClass( "menu-open")

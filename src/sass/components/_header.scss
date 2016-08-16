@@ -2,6 +2,18 @@
 	height: rem($main-header-height);
 	background:white;
 	
+	@media only screen and (max-width: 1100px) {
+		height: $main-header-height-mob;
+		margin-top:rem(-$main-header-height-mob);
+		width: 100%;
+		position: absolute;
+		
+		& .header-logo i{
+			height: rem(86px);
+		}
+	
+	}
+	
 	& .container{
 		position: relative;
 		height: rem($main-header-height);
@@ -10,4 +22,8 @@
 
 .header-logo{
 	display: inline-block;
+	@media only screen and (max-width: 1100px) {
+		text-align: center;
+		display: block;
+	}
 }

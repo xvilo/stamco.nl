@@ -1,5 +1,5 @@
 .page-header{
-	height: 180px;
+	height: rem(180px);
 	background: #f2f3f3;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -9,7 +9,8 @@
 	
 	
 	& .container{
-		padding-left:rem(250px);
+		@media only screen and (min-width: 1100px) {padding-left:rem(250px);}
+		@media only screen and (max-width: 1100px) {text-align: center;}
 		flex-basis: auto;
 		flex-grow: 1;
 	}
@@ -24,4 +25,5 @@
 	font-size: 1.5rem;
 	/* mix-blend-mode: darken; test for better background */
 	box-shadow: 0 15px 35px rgba(0, 0, 0, .1), 0 3px 10px rgba(0, 0, 0, .07);
+	@media only screen and (max-width: 1100px) {margin:rem(60px) rem(20px) rem(40px) rem(20px);}
 }

@@ -7,37 +7,7 @@
 		</div>
 	</section>
 	
-		<!-- Test if the current post is in category 3. -->
-		<!-- If it is, the div box is given the CSS class "post-cat-three". -->
-		<!-- Otherwise, the div box is given the CSS class "post". -->
-			
-		<?php if ( in_category( '3' ) ) : ?>
-			<div class="post-cat-three">
-		<?php else : ?>
-			<div class="post">
-		<?php endif; ?>
-			<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"></a></h2>
-			
-			
-		<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->
-			
-			<small><?php the_time('F jS, Y'); ?> by <?php the_author_posts_link(); ?></small>
-			
-			
-			<!-- Display the Post's content in a div box. -->
-			
-			<div class="entry">
 				<?php the_content(); ?>
-			</div>
-			
-			
-			<!-- Display a comma separated list of the Post's Categories. -->
-			
-			<p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_category( ', ' ); ?></p>
-		</div> <!-- closes the first div box -->
-			
-			
-		<!-- Stop The Loop (but note the "else:" - see next line). -->
 			
 		<?php endwhile; else : ?>
 			
