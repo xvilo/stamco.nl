@@ -66,3 +66,12 @@
   -moz-appearance: $value;
   appearance: $value;
 }
+
+//create an rgba from hex
+@function hexToRGBA($color, $opacity: 0.3) {
+    $red: red($color);
+	$green: green($color);
+	$blue: blue($color);
+
+	@return rgba($red, $green, $blue, $opacity);
+}

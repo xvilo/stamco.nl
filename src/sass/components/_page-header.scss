@@ -14,3 +14,14 @@
 		flex-grow: 1;
 	}
 }
+
+.page-header--title{
+	background:hexToRGBA($color-accent, 0.55);
+	display: inline-block;
+	padding: rem(10px) rem(45px);
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	/* mix-blend-mode: darken; test for better background */
+	box-shadow: 0 15px 35px rgba(0, 0, 0, .1), 0 3px 10px rgba(0, 0, 0, .07);
+}

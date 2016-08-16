@@ -5,9 +5,10 @@
 	bottom: 0;
 }
 
-.menu ul li{
+.header-menu .menu li{
+	@include animateIt(200ms);
 	display: inline-block;
-	padding: rem(20px) rem(10px);
+	padding: rem(20px) rem(15px);
 	margin-right: rem(5px);
 	
 	&:last-child{
@@ -15,8 +16,17 @@
 	}
 	
 	& a{
+		@include animateIt(200ms);
 		color: black;
 		font-weight: 600;
+	}
+	
+	&:hover{
+		background: $color-accent;
+		
+		& a{
+			color: white;
+		}
 	}
 	
 	&.current_page_item{

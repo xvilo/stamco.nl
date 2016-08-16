@@ -60,3 +60,7 @@
   position: absolute;
   width: 1px;
 }
+
+@mixin animateIt($speed) {
+  transition: all $speed cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+}
