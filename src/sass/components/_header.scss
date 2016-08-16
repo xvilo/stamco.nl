@@ -1,0 +1,13 @@
+.main-header{
+	height: rem($main-header-height);
+	background:white;
+	
+	& .container{
+		position: relative;
+		height: rem($main-header-height);
+	}
+}
+
+.header-logo{
+	display: inline-block;
+}

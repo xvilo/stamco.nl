@@ -1,0 +1,30 @@
+.header-menu{
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.menu ul li{
+	display: inline-block;
+	padding: rem(20px) rem(10px);
+	margin-right: rem(5px);
+	
+	&:last-child{
+		margin-roght:0px;
+	}
+	
+	& a{
+		color: black;
+		font-weight: 600;
+	}
+	
+	&.current_page_item{
+		background: $color-accent;
+		
+		& a{
+			color: white;
+			font-weight: 400;
+		}
+	}
+}

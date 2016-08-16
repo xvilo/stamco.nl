@@ -1,0 +1,16 @@
+.page-header{
+	height: 180px;
+	background: #f2f3f3;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	
+	
+	& .container{
+		padding-left:rem(250px);
+		flex-basis: auto;
+		flex-grow: 1;
+	}
+}

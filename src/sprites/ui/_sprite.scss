@@ -1,0 +1,7 @@
+	.icon--ui__stamco_logo_big {
+		@include rem((width: 269px));
+
+		&:before {
+			padding-top: calc((174% / 269%) * 100%);
+		}
+	}
