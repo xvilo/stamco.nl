@@ -1,26 +1,53 @@
-<!DOCTYPE html>
-<html lang="en" class="modernizr-no-js">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta charset="utf-8" />
-
-        <link rel="preconnect" href="//ajax.googleapis.com" />
-
-        <meta http-equiv="cleartype" content="on" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="description" content="" />
-
-        <title></title>
-
-        <link rel="stylesheet" href="/media/stylesheets/app.css" />
-        <script src="/media/javascripts/modernizr.js"></script>
-    </head>
-    <body>
-        <p>Salut Sem</p>
-        <script async src="/media/javascripts/svg4everybody.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/media/javascripts/jquery.js"><\/script>')</script>
-        <script async src="/media/javascripts/app.js"></script>
-    </body>
-</html>
+<?php get_header(); ?>
+<div class="container">
+         <!-- Start the Loop. -->
+			 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			
+			 	<!-- Test if the current post is in category 3. -->
+			 	<!-- If it is, the div box is given the CSS class "post-cat-three". -->
+			 	<!-- Otherwise, the div box is given the CSS class "post". -->
+			
+			 	<?php if ( in_category( '3' ) ) : ?>
+			 		<div class="post-cat-three">
+			 	<?php else : ?>
+			 		<div class="post">
+			 	<?php endif; ?>
+			
+			
+			 	<!-- Display the Title as a link to the Post's permalink. -->
+			
+			 	<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			
+			
+			 	<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->
+			
+			 	<small><?php the_time('F jS, Y'); ?> by <?php the_author_posts_link(); ?></small>
+			
+			
+			 	<!-- Display the Post's content in a div box. -->
+			
+			 	<div class="entry">
+			 		<?php the_content(); ?>
+			 	</div>
+			
+			
+			 	<!-- Display a comma separated list of the Post's Categories. -->
+			
+			 	<p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_category( ', ' ); ?></p>
+			 	</div> <!-- closes the first div box -->
+			
+			
+			 	<!-- Stop The Loop (but note the "else:" - see next line). -->
+			
+			 <?php endwhile; else : ?>
+			
+			
+			 	<!-- The very first "if" tested to see if there were any Posts to -->
+			 	<!-- display.  This "else" part tells what do if there weren't any. -->
+			 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+			
+			
+			 	<!-- REALLY stop The Loop. -->
+			 <?php endif; ?>
+</div>
+<?php get_footer(); ?>

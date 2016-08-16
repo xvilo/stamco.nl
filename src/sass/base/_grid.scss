@@ -1,7 +1,7 @@
 // Settings
 //------------------------------------------------------------------------------
 
-$row-width: rem(1224px);
+$row-width: rem(1140px);
 $column-gutter: 0;
 $total-columns: 12;
 
@@ -54,4 +54,9 @@ body:after {
 
 body:after {
   content: '#{$breakpoint-list}';
+}
+
+.container{
+	max-width: $row-width;
+	margin: 0 auto;
 }

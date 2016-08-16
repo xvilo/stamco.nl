@@ -1,5 +1,5 @@
-# address-book
-Simple Address Book
+# Stamco
+Stamco Custom Theme
 
 
 ## Frontend setup
