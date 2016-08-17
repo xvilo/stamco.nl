@@ -1,5 +1,5 @@
 		<div class="container">
-			<main class="main-page main-page__no-sidebar">
+			<main class="main-page">
 				<?php the_content(); ?>
 			</main>
 		</div>

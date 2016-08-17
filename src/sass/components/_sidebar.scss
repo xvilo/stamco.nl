@@ -1,0 +1,49 @@
+.main-page{
+	
+	&__sidebar{
+		@extend .main-page;
+		width: 75%;
+		float: left;
+		padding-right: rem(50px);
+	}
+}
+
+.main-sidebar{
+	width: 25%;
+	float: left;
+	
+	& .sidebar--widget{
+		background: $color-accent;
+		color: #fff;
+		padding: rem(25px) rem(30px);
+		margin-bottom: rem(50px);
+		
+		&__title{
+			margin-bottom: rem(15px);
+		}
+		
+		&__widget_nav_menu{
+			padding: rem(30px) rem(15px);
+		
+			& ul li{ 
+				margin: rem(10px) 0px;
+				
+				& a{
+					@include animateIt(200ms);
+					color: white;
+					padding: rem(8px) rem(10px);
+					
+					&:before{
+						content: "\203a";
+						margin-right: 10px;
+					}
+					
+					&:hover{
+						background: white;
+						color: $color-accent;
+					}
+				}
+			}
+		}
+	}
+}

@@ -16,3 +16,14 @@ function register_my_menu() {
   register_nav_menu('header-menu',__( 'Header Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
+
+register_sidebar($args = array(
+	'name'          => sprintf( __( 'Sidebar' )),
+	'id'            => "sidebar",
+	'description'   => '',
+	'class'         => '',
+	'before_widget' => '<div id="%1$s" class="sidebar--widget sidebar--widget__%2$s">',
+	'after_widget'  => "</div>\n",
+	'before_title'  => '<h3 class="sidebar--widget__title">',
+	'after_title'   => "</h3>\n",
+));
