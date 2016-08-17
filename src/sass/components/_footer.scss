@@ -1,12 +1,48 @@
 .page-footer{
 	background: $color-accent;
 	overflow: visible;
-	min-height: rem(105px);
+	min-height: rem(135px);
 	position: relative;
 	margin-top:rem(100px);
+	
+	& .container{
+		position: relative;
+	}
 	
 	&--logo{
 		position: absolute;
 		top:rem(-121px);
+		@media only screen and (max-width: em(750px))  {
+			left: 50%;
+			transform: translateX(-50%);
+			width: 200px;
+			top:rem(-91px);
+		}
+	}
+	
+	&--menu{
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top:rem(70px);
+		@media only screen and (max-width: em(750px))  {
+			display: block;
+			text-align: center;
+			position: initial;
+			padding-top: 75px;
+			padding-bottom: 40px
+		}
+		
+		& ul li{
+			display: inline-block;
+			color: white;
+			font-size: rem(14px);
+			margin-right: rem(35px);
+			@media only screen and (max-width: em(750px))  {
+				display: block;
+				text-align: center;
+				margin-right: 0px;
+			}
+		}
 	}
 }
