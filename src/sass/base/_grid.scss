@@ -4,6 +4,7 @@
 $row-width: rem(1140px);
 $column-gutter: 0;
 $total-columns: 12;
+$container-margin: rem(20px);
 
 // Default foundation MQs - uncomment & alter if changes are needed:
 // $small-range: (0em, 40em);
@@ -57,6 +58,7 @@ body:after {
 }
 
 .container{
-	max-width: $row-width;
+	max-width: $row-width + ( $container-margin * 2);
+	padding: 0 $container-margin;
 	margin: 0 auto;
 }

@@ -2,15 +2,30 @@
 	
 	&__sidebar{
 		@extend .main-page;
-		width: 75%;
-		float: left;
-		padding-right: rem(50px);
+		@media only screen and (min-width: em(1100px)) {
+			width: 75%;
+			float: left;
+			padding-right: rem(50px);
+		}
+		
+		@media only screen and (min-width: em(750px))  and (max-width: em(1100px)) {
+			width: 66.666666666%;
+			float: left;
+			padding-right: rem(25px);
+		}
 	}
 }
 
 .main-sidebar{
-	width: 25%;
-	float: left;
+	@media only screen and (min-width: em(1100px)) {
+		width: 25%;
+		float: left;
+	}
+	
+	@media only screen and (min-width: em(750px)) and (max-width: em(1100px))  {
+		width: 33.333333333%;
+		float: left;
+	}
 	
 	& .sidebar--widget{
 		background: $color-accent;
