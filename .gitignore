@@ -3,3 +3,4 @@ node_modules/
 Guardfile
 html/media/javascripts/app.js
 html/media/stylesheets/app.css
+html/dist/
