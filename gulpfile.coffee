@@ -13,7 +13,8 @@ help = require('gulp-help') gulp, hideEmpty: true
 gulp.task 'styles', 'Compile Sass.', ['sass']
 gulp.task 'scripts', 'Compile Coffeescript and JS.', ['webpack']
 gulp.task 'default', 'Compile Sass, Coffeescript, JS, sprites.', (done) -> runSequence ['sprites', 'scripts'], done
-gulp.task 'dist', 'Generate, version and minify assets. Dist assets are saved to location specified in gulpfile (paths.dist).', (done) -> runSequence 'default', 'rev', ['compress:css', 'compress:js'], done
+#gulp.task 'dist', 'Generate, version and minify assets. Dist assets are saved to location specified in gulpfile (paths.dist).', (done) -> runSequence 'default', 'rev', ['compress:css', 'compress:js'], done
+gulp.task 'dist', 'Generate, version and minify assets. Dist assets are saved to location specified in gulpfile (paths.dist).', (done) -> runSequence 'default', 'rev', 'revReplace', done
 gulp.task 'lint', 'Lint Sass and Coffeescript.', ['lint:scss', 'lint:coffee']
 gulp.task 'sprites', 'Compile SVG files into sprites.', (done) -> runSequence 'sprites:svg', 'styles', done
 
@@ -207,6 +208,7 @@ gulp.task 'watch', 'Compile assets on change to source files (Sass, Coffeescript
 # ------------------------------------------------------------------------------
 
 rev = require 'gulp-rev'
+revReplace = require 'gulp-rev-replace'
 
 gulp.task 'clear:dist', 'Remove previously generated dist files.', (done) -> del ["#{paths.dist}**/*", "!#{paths.dist}.gitignore"], done
 
@@ -220,6 +222,14 @@ gulp.task 'rev', ['clear:dist'], ->
   .pipe rev.manifest()
   .pipe gulp.dest paths.dist
 
+manifest = gulp.src '#{paths.dist}manifest.json'
+  
+gulp.task 'revReplace', ->
+  gulp.src [
+    "*.html"
+    "header.php"
+    ], base: paths.docroot
+    .pipe revReplace([manifest: manifest])
 
 # Compress
 # ------------------------------------------------------------------------------

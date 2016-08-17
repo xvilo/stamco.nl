@@ -1,0 +1,12 @@
+.page-footer{
+	background: $color-accent;
+	overflow: visible;
+	min-height: rem(105px);
+	position: relative;
+	margin-top:rem(100px);
+	
+	&--logo{
+		position: absolute;
+		top:rem(-121px);
+	}
+}
