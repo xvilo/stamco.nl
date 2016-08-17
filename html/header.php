@@ -23,7 +23,7 @@
 			<header class="main-header">
 				<div class="container">
 				    <div class="header-logo">
-					    <i class="icon icon--ui__stamco_logo_big"><svg><use xlink:href="<?php echo get_template_directory_uri() ?>/media/images/sprites/ui.svg#stamco_logo_big" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></i>
+					    <i class="m-icon icon--ui__stamco_logo_big"><svg><use xlink:href="<?php echo get_template_directory_uri() ?>/media/images/sprites/ui.svg#stamco_logo_big" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></i>
 				    </div>
 				    <a href="#" class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
 				    <nav class="header-menu">

@@ -1,0 +1,9 @@
+#breadcrumbs{
+	margin: rem(20px) rem(0px);
+	font-size: 12px;
+
+	& .breadcrumb_last{
+		font-style: italic;
+	}
+}
+

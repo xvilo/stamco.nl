@@ -1,4 +1,4 @@
-.icon {
+.m-icon {
   position: relative;
   display: inline-block;
   max-width: 100%;
@@ -32,5 +32,5 @@
   }
 }
 
-// Example import (assumes a sprite named 'ui'):
-// @import 'ui/sprite.scss';
+// Importing icon sets
+@import 'ui/_sprite.scss';

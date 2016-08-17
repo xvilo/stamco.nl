@@ -1,11 +1,19 @@
 .page-header{
 	height: rem(180px);
 	background: #f2f3f3;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
 	display: flex;
 	align-items: center;
+	
+	&__image{
+		@extend .page-header;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		
+		& .page-header--title{
+			background:hexToRGBA($color-accent, 0.85);
+		}
+	}
 	
 	
 	& .container{
@@ -17,7 +25,7 @@
 }
 
 .page-header--title{
-	background:hexToRGBA($color-accent, 0.55);
+	background:hexToRGBA($color-accent, 1);
 	display: inline-block;
 	padding: rem(10px) rem(45px);
 	color: white;

@@ -5,12 +5,21 @@ html {
   font-size: percentage($base-font-size / 16px);
 
   //Example of varying site scale at a breakpoint:
-  @media only screen and (min-width: em(1900px)) {
-  	font-size: percentage(($base-font-size + 5px) / 16px);
-  }
+  //@media only screen and (min-width: em(1900px)) {
+  //	font-size: percentage(($base-font-size + 5px) / 16px);
+  //}
 }
 
 body {
   min-height: 100%;
   @media only screen and (max-width: 1100px) {padding-top: $main-header-height-mob;}
+}
+
+.list--bullet{
+	list-style-type: inherit;
+	padding-left: 1em;
+	
+	& li {
+		margin: 0.5em 0em 0em 0em;
+	}
 }
