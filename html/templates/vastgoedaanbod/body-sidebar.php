@@ -7,8 +7,12 @@
 					<?php endif; ?>
 				<?php the_content(); ?>
 				<dl class="vastgoed--description__list">
-					<dt class="vastgoed--description__item">Item</dt>
-					<dd class="vastgoed--description__desc">Omschrijving van item is hier te vinden!</dd>
+					<?php foreach (get_field('extra_informatie') as $info){
+						?>
+					<dt class="vastgoed--description__item"><?php echo $info['titel'] ?></dt>
+					<dd class="vastgoed--description__desc"><?php echo $info['info'] ?></dd>
+						<?php
+					}?>
 				</dl>
 			</main>
 			<aside class="main-sidebar">
