@@ -27,6 +27,9 @@ function sem_register_acf_fields()
 		
 	if ( ! class_exists('acf_field_date_time_picker') )
 		include_once(IRON_PARENT_DIR.'/inc/acf-addons/acf-field-date-time-picker/date_time_picker-v4.php');
+	
+	//if ( ! class_exists('acf_field_gallery') )
+	//	include_once(IRON_PARENT_DIR.'/inc/acf-addons/acf-gallery/acf-gallery.php');
 
 }
 

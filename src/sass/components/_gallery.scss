@@ -1,0 +1,14 @@
+@import 'photoswipe/main'; // get stuff
+@import 'photoswipe/default-skin/default-skin'; //get skin
+
+.my-gallery{
+	background: #F2F3F3;
+	padding: rem(20px);
+	margin-top:5rem;
+	margin-bottom: 3rem;
+	& figure{
+		float: left;
+		padding-right: rem(10px);
+		width: 20%;
+	}
+}

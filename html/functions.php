@@ -83,12 +83,13 @@ function blokken_func( $atts ){
 	
 	if( $my_query->have_posts() ) {
 		while ($my_query->have_posts()) : $my_query->the_post();
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'archive-thumb' );
 			$html .= "
 			<article class=\"large-3 columns vastgoed--home\">
 				<div class=\"vastgoed--featured-image\" style=\"background-image: url('".$image[0]."')\"></div>
-				<h4 class=\"vastgoed--home__title\"> <i class=\"m-icon icon--ui__arrow\"><svg><use xlink:href=\"".get_template_directory_uri()."/media/images/sprites/ui.svg#arrow\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use></svg></i>".get_the_title()."</h4>
+				<h4 class=\"vastgoed--home__title\"> <a href=\"".get_permalink()."\"> <i class=\"m-icon icon--ui__arrow\"><svg><use xlink:href=\"".get_template_directory_uri()."/media/images/sprites/ui.svg#arrow\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use></svg></i>".get_the_title()."</a></h4>
 				<p clas\"vastgoed--home__information\">".get_field('card_informatie')."</p>
+				<hr class=\"vastgoed--bar\">
 			</article>";
 		endwhile;
 	}
@@ -98,3 +99,5 @@ function blokken_func( $atts ){
 	return $html;
 }
 add_shortcode( 'blokken', 'blokken_func' );
+
+add_image_size("archive-thumb", 720, 485, true);

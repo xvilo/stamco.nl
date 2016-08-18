@@ -9,7 +9,6 @@
 }
 
 .vastgoed--home{
-	border-bottom: rem(5px) solid $color-accent;
 	padding-bottom: rem(15px);
 	padding-right: 0.5rem;
 	
@@ -24,10 +23,27 @@
 	
 	&__title{
 		margin-bottom: rem(5px);
+		
+		& a{
+			color: black;
+		}
+		
+		& .m-icon{
+			margin-bottom: rem(-3px)!important;
+			margin-right: rem(5px);
+		}
+	}
+	
+	& .vastgoed--bar{
+		border: 0px;
+		height: rem(3px);
+		background: $color-accent;
 	}
 }
 
 .vastgoed--description__item{
 	color: $color-accent; 
 	font-weight:600;
+	min-width: rem(130px);
+	display: inline-block;
 }

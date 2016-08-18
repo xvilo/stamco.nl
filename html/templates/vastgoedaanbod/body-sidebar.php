@@ -6,14 +6,14 @@
 					</div>
 					<?php endif; ?>
 				<?php the_content(); ?>
-				<dl class="vastgoed--description__list">
+				<ul class="vastgoed--description__list">
 					<?php foreach (get_field('extra_informatie') as $info){
 						?>
-					<dt class="vastgoed--description__item"><?php echo $info['titel'] ?></dt>
-					<dd class="vastgoed--description__desc"><?php echo $info['info'] ?></dd>
+					<li> <span class="vastgoed--description__item"><?php echo $info['titel'] ?>:</span> <?php echo $info['info'] ?></li>
 						<?php
 					}?>
-				</dl>
+				</ul>
+				<?php get_template_part('gallery') ?>			
 			</main>
 			<aside class="main-sidebar">
 				<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
