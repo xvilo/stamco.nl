@@ -99,5 +99,15 @@ function blokken_func( $atts ){
 	return $html;
 }
 add_shortcode( 'blokken', 'blokken_func' );
-
 add_image_size("archive-thumb", 720, 485, true);
+
+add_action('wp_head','hook_css');
+
+function hook_css() {
+	global $post;
+	if(get_field('gallerij', $post->ID)){
+		foreach(get_field('gallerij') as $photo){
+			echo "<link rel=\"preload\" href=\"{$photo['url']}\">";
+		}
+	}
+}
