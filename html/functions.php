@@ -54,3 +54,16 @@ function sample_admin_notice__success() {
 	}
 }
 add_action( 'admin_notices', 'sample_admin_notice__success' );
+
+// add category nicenames in body class
+function category_id_class() {
+	global $post;
+	if($post->post_content == ""){
+		$classes[] = 'empty-post';
+	}else{
+		$classes[] = 'non-empty-post';
+	}
+	return $classes;
+}
+
+add_filter('body_class', 'category_id_class');

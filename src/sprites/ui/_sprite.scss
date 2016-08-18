@@ -5,3 +5,10 @@
 			padding-top: calc((174% / 269%) * 100%);
 		}
 	}
+	.icon--ui__stamco_logo_clear {
+		@include rem((width: 269px));
+
+		&:before {
+			padding-top: calc((174% / 269%) * 100%);
+		}
+	}

@@ -5,8 +5,18 @@
 	position: relative;
 	margin-top:rem(100px);
 	
+	.empty-post &{
+		margin-top:-58px;
+	}
+	
 	& .container{
 		position: relative;
+		
+		@media only screen and (max-width: em(750px))  {
+			.empty-post &{
+				text-align: center;
+			}
+		}
 	}
 	
 	&--logo{
@@ -17,6 +27,19 @@
 			transform: translateX(-50%);
 			width: 200px;
 			top:rem(-91px);
+		}
+		
+		 &__clear{ display: none; }
+		
+		.empty-post &{
+			display: none;
+		}
+		
+		.empty-post &__clear{
+			display: block;
+			@media only screen and (max-width: em(750px))  {
+				display: inline-block;
+			}          
 		}
 	}
 	
@@ -29,8 +52,18 @@
 			display: block;
 			text-align: center;
 			position: initial;
-			padding-top: 75px;
-			padding-bottom: 40px
+			padding-top: rem(75px);
+			padding-bottom: rem(40px);
+		}
+		
+		.empty-post &{
+			padding-left: rem(300px);
+			padding-top: 0px;
+			
+			@media only screen and (max-width: em(750px))  {
+				padding-left: rem(0px);
+				padding-top: 0px;
+			}
 		}
 		
 		& ul li{
