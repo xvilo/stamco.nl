@@ -3,6 +3,7 @@
 	background: #f2f3f3;
 	display: flex;
 	align-items: center;
+	border-bottom: 4px solid $color-accent;
 	
 	&__image{
 		@extend .page-header;
@@ -13,6 +14,10 @@
 		& .page-header--title{
 			background:hexToRGBA($color-accent, 0.85);
 		}
+	}
+	
+	&__slider{
+		border-bottom: 4px solid $color-accent;
 	}
 	
 	

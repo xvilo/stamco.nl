@@ -1,0 +1,20 @@
+blockquote{
+	color: $color-accent;
+	font-size: 1.3rem;
+	
+	& cite{
+		display: block;
+		text-align: right;
+		font-size: rem(14px);
+		margin-top: rem(20px);
+					
+		&:before{
+			content: '“Citaat:';
+			margin-right: 0.5rem;
+		}
+		
+		&:after{
+			content: '”'
+		}
+	}
+}
