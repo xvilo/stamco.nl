@@ -1,0 +1,28 @@
+.vastgoed--featured-image{
+	min-height: rem(450px);
+	margin-bottom: rem(50px);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.vastgoed--home{
+	border-bottom: rem(5px) solid $color-accent;
+	padding-bottom: rem(15px);
+	padding-right: 0.5rem;
+	
+	&:last-child{
+		padding-right: 0rem;
+	}
+	
+	& .vastgoed--featured-image{
+		min-height: rem(200px);
+		margin-bottom: rem(10px);
+	}
+	
+	&__title{
+		margin-bottom: rem(5px);
+	}
+}

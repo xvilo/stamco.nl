@@ -11,6 +11,7 @@ $use_dashicons = floatval($wp_version) >= 3.8;
 
 require_once('inc/advanced-custom-fields/acf.php');
 include('inc/custom-fields.php');
+include('inc/custom-posttypes.php');
 
 function register_my_menu() {
   register_nav_menu('header-menu',__( 'Header Menu', 'magneet-online' ));
@@ -55,7 +56,7 @@ function sample_admin_notice__success() {
 }
 add_action( 'admin_notices', 'sample_admin_notice__success' );
 
-// add category nicenames in body class
+// check if post content is empty
 function category_id_class() {
 	global $post;
 	if($post->post_content == ""){
@@ -67,3 +68,33 @@ function category_id_class() {
 }
 
 add_filter('body_class', 'category_id_class');
+
+function blokken_func( $atts ){
+	$type = 'vastgoedaanbod';
+	$html .= "<div class\"row\">";
+	$args=array(
+	  'post_type' => $type,
+	  'post_status' => 'publish',
+	  'posts_per_page' => 4,
+	  'caller_get_posts'=> 1);
+	
+	$my_query = null;
+	$my_query = new WP_Query($args);
+	
+	if( $my_query->have_posts() ) {
+		while ($my_query->have_posts()) : $my_query->the_post();
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+			$html .= "
+			<article class=\"large-3 columns vastgoed--home\">
+				<div class=\"vastgoed--featured-image\" style=\"background-image: url('".$image[0]."')\"></div>
+				<h4 class=\"vastgoed--home__title\"> <i class=\"m-icon icon--ui__arrow\"><svg><use xlink:href=\"".get_template_directory_uri()."/media/images/sprites/ui.svg#arrow\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use></svg></i>".get_the_title()."</h4>
+				<p clas\"vastgoed--home__information\">".get_field('card_informatie')."</p>
+			</article>";
+		endwhile;
+	}
+	wp_reset_query();
+	
+	$html .= "</div>";
+	return $html;
+}
+add_shortcode( 'blokken', 'blokken_func' );

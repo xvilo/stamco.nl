@@ -38,3 +38,5 @@ $(".menu-icon").on "click", (event) ->
     $("body").removeClass( "menu-open")
   else
     $("body").addClass( "menu-open")
+
+$("aside").stick_in_parent()
