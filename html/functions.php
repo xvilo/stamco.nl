@@ -86,7 +86,7 @@ function blokken_func( $atts ){
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'archive-thumb' );
 			$html .= "
 			<article class=\"large-3 columns vastgoed--home\">
-				<div class=\"vastgoed--featured-image\" style=\"background-image: url('".$image[0]."')\"></div>
+				<div class=\"vastgoed--featured-image\" style=\"background-image: url('".$image[0]."')\"><a href=\"".get_permalink()."\" class=\"vastgoed--featured-image__overlay\">&nbsp;</a></div>
 				<h4 class=\"vastgoed--home__title\"> <a href=\"".get_permalink()."\"> <i class=\"m-icon icon--ui__arrow\"><svg><use xlink:href=\"".get_template_directory_uri()."/media/images/sprites/ui.svg#arrow\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use></svg></i>".get_the_title()."</a></h4>
 				<p clas\"vastgoed--home__information\">".get_field('card_informatie')."</p>
 				<hr class=\"vastgoed--bar\">
