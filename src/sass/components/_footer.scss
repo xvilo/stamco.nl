@@ -47,7 +47,7 @@
 		display: inline-block;
 		position: absolute;
 		right: 0;
-		top:rem(70px);
+		top:rem(40px);
 		@media only screen and (max-width: em(750px))  {
 			display: block;
 			text-align: center;
@@ -70,11 +70,19 @@
 			display: inline-block;
 			color: white;
 			font-size: rem(14px);
-			margin-right: rem(35px);
+			margin-right: rem(15px);
 			@media only screen and (max-width: em(750px))  {
 				display: block;
 				text-align: center;
 				margin-right: 0px;
+			}
+			&:before{
+				content: "\f28d";
+				font: normal normal normal rem(14px)/1 FontAwesome;
+				margin-right: rem(5px);
+				@media only screen and (max-width: em(750px))  {
+					content: "";
+				}
 			}
 		}
 	}
