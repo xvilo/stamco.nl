@@ -19,9 +19,6 @@
 	@media only screen and (min-width: 1100px) {
 		@include animateIt(200ms);
 		display: inline-block;
-		padding: rem(20px) rem(15px);
-		margin-right: rem(5px);
-		font-size: 14px;
 		
 		&:last-child{
 			margin-roght:0px;
@@ -31,6 +28,10 @@
 			@include animateIt(200ms);
 			color: black;
 			font-weight: 600;
+			display: inline-block;
+			padding: rem(20px) rem(15px);
+			margin-right: rem(5px);
+			font-size: 14px;
 		}
 		
 		&:hover{
