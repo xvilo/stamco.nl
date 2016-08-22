@@ -6,3 +6,16 @@
 	color: black!important;
 	min-width: 90%!important;
 }
+
+.iphorm-elements .iphorm-submit-wrap .iphorm-submit-element{
+	background: $color-accent!important;
+	
+	& span{
+		background: $color-accent!important;
+	}
+	
+	& em{
+		background: $color-accent!important;
+		color: white;
+	}
+}
