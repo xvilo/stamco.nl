@@ -111,3 +111,24 @@ function hook_css() {
 		}
 	}
 }
+
+function add_theme_scripts() {
+	$rev_files = array_reverse(json_decode(file_get_contents(get_template_directory()."/dist/rev-manifest.json"), true));
+	foreach($rev_files as $key => $item){
+		if($_SERVER['HTTP_HOST'] != "stamco.sem" ){
+			if(pathinfo($item, PATHINFO_EXTENSION) == "css"){
+				wp_enqueue_style(pathinfo($item, PATHINFO_FILENAME), get_template_directory_uri() ."/dist/". $item);
+			}elseif(pathinfo($item, PATHINFO_EXTENSION) == "js"){
+				wp_enqueue_script( pathinfo($item, PATHINFO_FILENAME), get_template_directory_uri() ."/dist/". $item, '', '', true);
+			}
+		}else{
+			if(pathinfo($key, PATHINFO_EXTENSION) == "css"){
+				wp_enqueue_style("dev-".pathinfo($key, PATHINFO_FILENAME), get_template_directory_uri() ."/". $key);
+			}elseif(pathinfo($key, PATHINFO_EXTENSION) == "js"){
+				wp_enqueue_script( "dev-".pathinfo($key, PATHINFO_FILENAME), get_template_directory_uri() ."/". $key, '', '', true);
+			}
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+

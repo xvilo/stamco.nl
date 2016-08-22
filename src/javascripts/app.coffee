@@ -28,11 +28,8 @@ app.attachFastClick = -> FastClick.attach document.body
 
 app.setup()
 
-(($) ->
-  
-) jQuery
-
 $(".menu-icon").on "click", (event) ->
+  console.log('click');
   event.preventDefault()
   if $("body").hasClass( "menu-open" )
     $("body").removeClass( "menu-open")
@@ -40,3 +37,5 @@ $(".menu-icon").on "click", (event) ->
     $("body").addClass( "menu-open")
 
 $("aside").stick_in_parent()
+
+console.log($);

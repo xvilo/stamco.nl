@@ -13,9 +13,9 @@
 
         <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/stylesheets/app.css" />
+        <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/stylesheets/app.css" />-->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <script src="<?php echo get_template_directory_uri() ?>/media/javascripts/modernizr.js"></script>
+        <!-- <script src="<?php echo get_template_directory_uri() ?>/media/javascripts/modernizr.js"></script> -->
         <?php echo wp_head() ?>
     </head>
     <body <?php body_class(''); ?>>
