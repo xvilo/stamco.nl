@@ -30,7 +30,7 @@
 			position: absolute;
 			
 			&:hover{
-				background: hexToRGBA($color-accent, 1);
+				background: hexToRGBA($color-accent, 0.5);
 				mix-blend-mode:multiply;
 			}
 		}
@@ -38,6 +38,9 @@
 	
 	&__title{
 		margin-bottom: rem(5px);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		
 		& a{
 			color: black;

@@ -43,6 +43,11 @@
 			& ul li{ 
 				margin: rem(10px) 0px;
 				
+				&.current-menu-item a{
+					background: white;
+					color: $color-accent;
+				}
+				
 				& a{
 					@include animateIt(200ms);
 					color: white;
