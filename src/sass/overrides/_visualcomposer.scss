@@ -5,3 +5,11 @@
 		justify-content: center;
 		align-items: center;
 }
+
+.vc_btn3.vc_btn3-color-danger, .vc_btn3.vc_btn3-color-danger.vc_btn3-style-flat {
+	background-color: $color-accent!important;
+	
+	&:hover{
+		opacity: 0.8;
+	}
+}
