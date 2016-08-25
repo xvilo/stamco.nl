@@ -9,13 +9,22 @@
 
 .iphorm-elements .iphorm-submit-wrap .iphorm-submit-element{
 	background: $color-accent!important;
+	border: 0px!important;
+	padding: rem(5px) rem(25px);
+	font-weight: 700;
 	
 	& span{
 		background: $color-accent!important;
+		border: 0px!important;
 	}
 	
 	& em{
 		background: $color-accent!important;
 		color: white;
+		text-transform: uppercase;
 	}
+}
+
+.iphorm-required{
+	font-size: 1rem!important;
 }

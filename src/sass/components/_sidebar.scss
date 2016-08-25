@@ -41,7 +41,7 @@
 			padding: rem(30px) rem(15px);
 		
 			& ul li{ 
-				margin: rem(10px) 0px;
+				margin: rem(0px) 0px;
 				
 				&.current-menu-item a{
 					background: white;
@@ -52,6 +52,7 @@
 					@include animateIt(200ms);
 					color: white;
 					padding: rem(8px) rem(10px);
+					display: block;
 					
 					&:before{
 						content: "\f054";

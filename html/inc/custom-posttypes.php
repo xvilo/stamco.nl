@@ -3,7 +3,7 @@
 function vastgoedaanbod_posttype() {
 
 	$labels = array(
-		'name'                  => _x( 'Vastgoed Aanbod', 'Post Type General Name', 'magneet-online' ),
+		'name'                  => _x( 'Vastgoed aanbod', 'Post Type General Name', 'magneet-online' ),
 		'singular_name'         => _x( 'object', 'Post Type Singular Name', 'magneet-online' ),
 		'menu_name'             => __( 'Vastgoed aanbod', 'magneet-online' ),
 		'name_admin_bar'        => __( 'Vastgoed aanbod', 'magneet-online' ),
