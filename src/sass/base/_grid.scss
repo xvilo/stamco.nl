@@ -62,3 +62,8 @@ body:after {
 	padding: 0 $container-margin;
 	margin: 0 auto;
 }
+
+/* Gridfix */
+.column + .column:last-child, .columns + .column:last-child, .column + .columns:last-child, .columns + .columns:last-child{
+	float: left!important;
+}
