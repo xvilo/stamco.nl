@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="modernizr-no-js">
+<html lang="nl" class="modernizr-no-js">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8" />
