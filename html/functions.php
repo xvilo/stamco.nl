@@ -13,6 +13,8 @@ require_once('inc/advanced-custom-fields/acf.php');
 include('inc/custom-fields.php');
 include('inc/custom-posttypes.php');
 
+add_theme_support( 'title-tag' );
+
 function register_my_menu() {
   register_nav_menu('header-menu',__( 'Header Menu', 'magneet-online' ));
 }
@@ -67,7 +69,7 @@ function category_id_class() {
 	return $classes;
 }
 
-add_filter('body_class', 'category_id_class');
+//add_filter('body_class', 'category_id_class');
 
 function blokken_func( $atts ){
 	$type = 'vastgoedaanbod';
